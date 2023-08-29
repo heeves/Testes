@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script
+<link rel="stylesheet" href="component.css"/>
+<body ng-app="myApp">
+
+<p>Escolha o seu Cadastro</p>
+
+<a href="empresa.html">empresa</a>
+<a href="fornecedor.html">fornecedor</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.htm"     
+    })
+    .when("/red", {
+        templateUrl : "empresa.htm"
+    })
+    .when("/green", {
+        templateUrl : "fornecedor.htm"
+    })
+    
+});

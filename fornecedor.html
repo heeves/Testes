@@ -1,0 +1,39 @@
+<form [formFor]="registerForm" (ngSubmit)="onSubmit()">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div fxFlex="100%">Cadastro Fornecedor<br>
+        Escolha o seu tipo:
+        <select ng-model="myVar">
+            <option value="">
+            <option value="cnpj">CNPJ
+            <option value="cpf">CPF
+          </select><br>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Documento: </mat-label>
+          <input matSelect formControlName="documento" name="documento" required pattern="/\s/">
+        </mat-form-field>
+      </div>
+      <div fxFlex="100%">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" name="nome" required type="nome">
+        </mat-form-field>
+      </div>
+      <div fxFlex="100%">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="eMail" name="eMail" type="eMail" required pattern="^(?=.*[a-z])(?=.*[@])(?=.*[a-z])$">
+          <mat-error *ngIf="registerForm.value.eMail"></mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100%">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>CEP</mat-label>
+          <input matInput formControlName="cep" name="cep" type="cep" required pattern="{{registerForm.value.cep}}">
+          <mat-error *ngIf="registerForm.value.cep"></mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100%">
+          <button mat-stroked-button color="primary" type="submit" [disabled]="!registerForm.valid">Cadastro<mat-icon>chevron_right</mat-icon></button>
+      </div>
+    </div>
+</form>
