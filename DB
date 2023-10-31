@@ -1,0 +1,190 @@
+CREATE TABLE Funcionarios (
+    codigo int,
+    PrimeiroNome varchar(50),
+    SegundoNome varchar(50),
+    UltimoNome varchar(50),
+    DataNasci varchar(10),
+    CPF varchar(14),
+    RG varchar(12),
+    Endereco varchar(50),
+    CEP varchar(9),
+    Cidade varchar(50),
+    DDD int,
+    Fone varchar(9),
+    CodigoDepartamento varchar(10),
+    Funcao varchar(50),
+    Salario int,
+    Status varchar(50) 
+);-- Criando a tabela Funcionários
+
+CREATE TABLE Departamentos (
+    Codigo int,
+    Nome varchar(50),
+    Localizacao varchar(50),
+    CodigoFuncionarioGerente int,
+    Status varchar(50)
+  );-- Criando a tabela Departamentos
+	
+--Exercícios
+
+insert into Funcionarios (codigo, PrimeiroNome, SegundoNome, UltimoNome, DataNasci, CPF, RG, Endereco, CEP, Cidade, DDD, Fone, CodigoDepartamento, Funcao, Salario, Status)
+values
+(0, 'Fernando','','Alcântara', '11/10/1986', '443.944.789-95', '56.313.461-7', 'Avenida Anhaia Melo, 1', '13861-101', 'São Paulo', 011, '40473549' ,1, 'dev', '1000', '1'),
+(1, 'Maria','Alejandra','Assunção', '12/11/1987', '554.055.890-06', '67.424.572-8', 'Avenida Anhaia Melo, 2', '24972-212', 'Rio de Janeiro',  0, '0' ,1, 'telefonista', '1000', '1'),
+(2, 'Sebástian','','Assunção', '13/12/1988',  '665.166.901-17', '76.535.683-9', 'Avenida Anhaia Melo, 3', '35083-323', 'Rio de Janeiro',  021, '51584650' ,1, 'dev', '1000', '1'),
+(3, 'Marisol','González','Azevedo',  '14/01/1989', '776.277.012-28',  '87.646.794-0', 'Avenida Anhaia Melo, 4', '46194-434', 'Recife',  0, '0' ,1, 'supervisor', '1000', '1'),
+(4, 'Marcelo','','Azevedo',  '15/02/1990',  '887.388.123-39', '98.757.805-1', 'Avenida Anhaia Melo, 5', '57205-545', 'São Paulo' ,  011, '62695761' ,1, 'telefonista', '1000', '1'),
+(5, 'Lucero','Hogaza','Pereira',  '16/03/1991',  '998.499.234-41', '09.868.916-2', 'Rua Bartira, 1', '68316-656', 'Rio de Janeiro',  0, '0' ,1, 'dev', '1000', '1'),
+(6, 'Mauricio','','Pereira',  '17/04/1992', '009.500.345-52',  '10.979.027-3', 'Rua Bartira, 2', '79427-767', 'Rio de Janeiro' ,  021, '737706872' ,1, 'telefonista', '1000', '1'),
+(7, 'Victoria','Ruffo','Nogueira',  '18/05/1993', '110.611.456-63',  '21.080.138-4', 'Rua Bartira, 3', '80538-878', 'Recife',  0, '0' ,1, 'telefonista', '1000', '1'),
+(8, 'Mario','','Nogueira', '19/06/1994',  '221.722.567-74', '32.191.249-5', 'Rua Bartira, 4', '91649-989', 'São Paulo',  011, '848817983' ,1, 'telefonista', '1000', '1'),
+(9, 'Gabriela','Spanic','Oliveira',  '20/07/1995',  '332.833.678-85', '43.929.035-2', 'Rua Bartira, 5', '72005-090', 'Rio de Janeiro',  0, '0' ,1, 'dev', '1000', '1'),
+(10, 'Afonso','','Oliveira',  '21/08/1996', '443.944.789-96', '54.030.146-3', 'Avenida Carrão, 1', '83116-101', 'Rio de Janeiro',  021, '959928094' ,2, 'telefonista', '2000', '1'),
+(11, 'Bárbara','Mori','Pereira',  '22/09/1997',  '554.055.890-07', '65.141.267-4', 'Avenida Carrão, 2', '94227-212', 'Recife',  0, '0' ,2, 'supervisor', '2000', '1'),
+(12, 'Cristopher','','Silveira',  '23/10/1998',  '665.166.901-18', '76.252.378-5', 'Avenida Carrão, 3', '05138-323', 'São Paulo',  011, '060039194' ,2, 'telefonista', '2000', '1'),
+(13, 'Ana','Brenda','Contreras',  '24/11/1999',  '776.277.012-29', '87.363.489-6', 'Avenida Carrão, 4', '16249-434', 'Rio de Janeiro',  0, '0' ,3, 'gerente', '3000', '1'),
+(14, 'Jaime','','Teixeira',  '25/12/2000',  '887.388.123-30', '98.474.590-7', 'Avenida Carrão, 5', '27350-545', 'Rio de Janeiro',  021, '171140205' ,3, 'telefonista', '3000', '1'),
+(15, 'Maite','Perrone','Silva',  '26/01/2001',  '998.499.234-41', '09.585.601-8', 'Avenida Deputado Emílio carlos, 1', '38461-656', 'Recife',  0, '0' ,3, 'Telefonista', '3000', '1'),
+(16, 'Stanley', '','Perez',  '27/02/2002',  '009.500.345-52', '10.696.712-9', 'Avenida Deputado Emílio carlos, 2', '49572-767', 'São Paulo',  011, '282251316' ,4, 'telefonista', '4000', '1'),
+(17, 'Angelique','Boyer','Mendes',  '28/03/2003',  '110.611.456-63', '21.707.823-0', 'Avenida Deputado Emílio carlos, 3', '50683-878', 'Rio de Janeiro',  0, '0' ,4, 'direção', '4000', '1'),
+(18, 'Osvaldo','','Pires',  '29/04/2004',  '221.722.567-74', '32.818.934-1', 'Avenida Deputado Emílio carlos, 4', '61794-989', 'Rio de Janeiro',  021, '393362427' ,4, 'telefonista', '4000', '1'),
+(19, 'Jacquelline','Bracamontes','Hoorde',  '30/05/2005',  '442.944.789-96', '43.929.045-2', 'Avenida Deputado Emílio carlos, 5', '72805-090', 'Recife',  0, '0' ,4, 'supervisor', '5000', '1');  -- 1.	Insira 20 registros na tabela “Funcionarios”.
+
+   
+
+INSERT INTO Departamentos ( Codigo, Nome, Localizacao, CodigoFuncionarioGerente, Status)
+VALUES (1, 'Departamento Pessoal', 'São Paulo', 3, '1'),
+(2, 'Analise', 'Campinas', 3, '1'),
+(3, 'Gerencia', 'Rio de Janeiro', 3, '1'),
+(4, 'Desativado', 'Recife', 3, '1'); -- 2.	Insira 4 registros na tabela “Departamentos”.
+
+SELECT * FROM Departamentos; -- Visualizar tabela
+
+delete from Departamentos;-- deleta as linhas da tabela
+
+drop table Funcionarios; -- apaga a tabela
+
+select CodigoDepartamento, Funcao
+from Funcionarios
+order by CodigoDepartamento desc
+
+update Funcionarios---------------------------------
+set CodigoDepartamento = 'Desativado'				|
+where Funcao = 'supervisor';								|
+													|----4.	Atualize o departamento com menor numero de funcionários para o nome “Desativado” e gerente NULL.
+update Funcionarios									|
+set Funcao = 'NULL'									|
+where CodigoDepartamento = '3';----------------------	
+
+select PrimeiroNome, UltimoNome
+from Funcionarios
+order by UltimoNome;--5.	Listar nome e sobrenome ordenado por sobrenome.
+
+
+select * from Funcionarios
+order by Cidade; --6.	Listar todos os campos de funcionários ordenados por cidade.
+
+
+select * from Funcionarios
+where salario > 1000
+order by PrimeiroNome, SegundoNome, UltimoNome; -------7.	Liste os funcionários que têm salário superior a R$ 1.000,00 ordenados pelo nome completo.
+
+select DataNasci, PrimeiroNome
+from Funcionarios
+order by DataNasci;--8.	Liste a data de nascimento e o primeiro nome dos funcionários ordenados do mais novo para o mais velho.
+
+
+select * 
+from Funcionarios
+where Fone <> 0; --9.	Liste os funcionários que possuam telefone.
+
+
+select *
+from Funcionarios
+WHERE DDD like '11' or DDD like '12';-----10.	Liste todos os Funcionários que sejam que possuam telefone de SP e RJ.
+
+
+select sum(salario) as folha_de_pagamento
+from Funcionarios --11.	Liste o total da folha de pagamento.
+
+
+select PrimeiroNome, Nome, Funcao
+from Funcionarios, Departamentos;--12.	Liste o nome, o nome do departamento e a função de todos os funcionários.
+
+
+select Nome, Funcao
+from Departamentos, Funcionarios
+where Funcao = 'gerente';--13.	Liste todos departamentos com seus respectivos gerentes.
+
+
+select Nome, count(Salario) as folha_de_pagamento
+from Departamentos, Funcionarios
+group by Nome;--14.	Liste o valor da folha de pagamento de cada departamento (nome).
+
+
+select CodigoDepartamento, Funcao
+from Funcionarios
+where Funcao = 'supervisor';--15.	Liste os departamentos dos funcionários que têm a função de supervisor.
+
+
+select count(Funcao) as numero_de_funcionarios
+from Funcionarios; --16.	Liste a quantidade de funcionários desta empresa.
+
+
+select avg(Salario) as media_salarial
+from Funcionarios;--17.	Liste o salário médio pago pela empresa.
+
+
+select CodigoDepartamento, min(Salario) as [minimo _salario]
+from Funcionarios
+group by CodigoDepartamento;  --18.	Liste o menor salário pago pela empresa em cada departamento.
+
+
+select PrimeiroNome, SegundoNome, UltimoNome
+from Funcionarios 
+where SegundoNome = '' ; --19.	Liste o nome completo de todos os funcionários que não tenham segundo nome.
+
+
+select Nome, PrimeiroNome
+from Departamentos, Funcionarios
+order by Nome, PrimeiroNome; --20.	Liste o nome do departamento e do funcionário ordenados por departamento e funcionário.
+
+
+select Cidade, Funcao
+from Funcionarios
+where Cidade = 'Recife' and Funcao = 'Telefonista'; --21.	Liste os nomes dos funcionários que moram em Recife e que exerçam a função de Telefonista.
+
+select PrimeiroNome, Nome
+from Funcionarios, Departamentos
+where Nome = 'Departamento Pessoal';--22.	Liste os nomes dos funcionários que trabalham no departamento Pessoal.
+
+
+select Salario, Funcao
+from Funcionarios
+where Salario > 3000 --23.	Liste o nome e o departamento de todos os funcionários que ganham mais do que algum gerente.
+
+select Funcao, CodigoDepartamento
+from Funcionarios
+where Funcao = 'gerente'--24.	Liste todos os gerentes por departamento.
+
+
+select CodigoDepartamento, sum(Salario) as Total
+from Funcionarios
+group by CodigoDepartamento--25.	Liste o total de salário de cada departamento.
+
+UPDATE Departamentos SET Status = 'Desativado' WHERE Nome = 'Desativado';
+UPDATE Funcionarios SET Status = 'Desativado' WHERE CodigoDepartamento = '4'; --26.	Exclua logicamente o departamento “Desativado” e seus funcionários.
+
+
+select Funcao, CodigoDepartamento
+from Funcionarios
+where codigoDepartamento = '4';    --27.	Liste todos os funcionários e departamentos inativos.
+
+DELETE F.Funcao, D.Nome
+FROM FuncionariosAS F 
+INNER JOIN Departamentos AS D ON F.Status = D.Status
+WHERE F.Status AND D.Status = 'Desativado'; --28.	Exclua fisicamente os funcionários e departamentos inativos.
+
+
+
+
